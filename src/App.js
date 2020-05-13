@@ -1,7 +1,8 @@
 import React from 'react';
 import AppTitle from "./AppTitle";
-import {ExamScores, OptionalExamForm} from "./ExamComponents";
+import {ExamScores, OptionalExamForm, AppCtx} from "./ExamComponents";
 import API from './API';
+
 
 class App extends React.Component {
 
@@ -49,7 +50,8 @@ class App extends React.Component {
     }
 
     render() {
-        return <div className="App">
+        return <AppCtx.Provider value={this.state.mode}>
+        <div className="App">
             <AppTitle/>
             <ExamScores exams={this.state.exams} courses={this.state.courses} mode={this.state.mode}
                         openExamForm={this.openExamForm} requireEditExam={this.requireEditExam}
@@ -60,6 +62,7 @@ class App extends React.Component {
                               cancelExam={this.cancelExam}
             />
         </div>
+        </AppCtx.Provider>
     }
 
 }
