@@ -53,11 +53,11 @@ class App extends React.Component {
         return <AppCtx.Provider value={this.state.mode}>
         <div className="App">
             <AppTitle/>
-            <ExamScores exams={this.state.exams} courses={this.state.courses} mode={this.state.mode}
+            <ExamScores exams={this.state.exams} courses={this.state.courses}
                         openExamForm={this.openExamForm} requireEditExam={this.requireEditExam}
                         deleteExam={this.deleteExam}
             />
-            <OptionalExamForm courses={this.state.courses} mode={this.state.mode} exam={this.state.editedExam}
+            <OptionalExamForm courses={this.state.courses} exam={this.state.editedExam}
                               addOrEditExam={this.addOrEditExam}
                               cancelExam={this.cancelExam}
             />
